@@ -1,0 +1,4037 @@
+{
+  "catalog_hash": "728bbf05fc61f0a570482e9acbf1ed87cb3582c7d04da9902f8c74cba6de6360",
+  "counts": {
+    "etfs": 99,
+    "excluded": 15,
+    "mappings": 781,
+    "stocks": 682
+  },
+  "criteria": {
+    "aliases": {
+      "BRK.B": "BRKb"
+    },
+    "alpaca_asset_class": "us_equity",
+    "alpaca_status": "active",
+    "alpaca_tradable": true,
+    "currency_profit": "USD",
+    "etf_path_prefix": "ETFs\\",
+    "mt5_trade_mode": "full",
+    "stock_path_prefix": "Stocks\\US\\"
+  },
+  "excluded": [
+    {
+      "asset_type": "etf",
+      "description": "Vanguard Morningstar Mid-Cap Value ETF",
+      "path": "ETFs\\VOE",
+      "reason": "mt5_not_full_trade",
+      "target": "VOE"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Air Lease Corp",
+      "path": "Stocks\\US\\NYSE\\AL",
+      "reason": "not_active_tradable_on_alpaca",
+      "target": "AL"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Amedisys Inc",
+      "path": "Stocks\\US\\Nasdaq\\AMED",
+      "reason": "not_active_tradable_on_alpaca",
+      "target": "AMED"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Aspen Technology Inc",
+      "path": "Stocks\\US\\Nasdaq\\AZPN",
+      "reason": "mt5_not_full_trade",
+      "target": "AZPN"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Berry Global Group Inc",
+      "path": "Stocks\\US\\NYSE\\BERY",
+      "reason": "mt5_not_full_trade",
+      "target": "BERY"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Brightstar Lottery",
+      "path": "Stocks\\US\\NYSE\\BRSL",
+      "reason": "mt5_not_full_trade",
+      "target": "BRSL"
+    },
+    {
+      "asset_type": "stock",
+      "description": "eXp World Holdings Inc",
+      "path": "Stocks\\US\\Nasdaq\\EXPI",
+      "reason": "not_active_tradable_on_alpaca",
+      "target": "EXPI"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Chart Industries Inc",
+      "path": "Stocks\\US\\NYSE\\GTLS",
+      "reason": "not_active_tradable_on_alpaca",
+      "target": "GTLS"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Interpublic Group of Cos Inc/T",
+      "path": "Stocks\\US\\NYSE\\IPG",
+      "reason": "not_active_tradable_on_alpaca",
+      "target": "IPG"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Kellogg Co",
+      "path": "Stocks\\US\\NYSE\\K",
+      "reason": "not_active_tradable_on_alpaca",
+      "target": "K"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Topgolf Callaway Brands Corp",
+      "path": "Stocks\\US\\NYSE\\MODG",
+      "reason": "mt5_not_full_trade",
+      "target": "MODG"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Paramount Global",
+      "path": "Stocks\\US\\Nasdaq\\PARA",
+      "reason": "mt5_not_full_trade",
+      "target": "PARA"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Everpure Inc",
+      "path": "Stocks\\US\\NYSE\\PSTG",
+      "reason": "mt5_not_full_trade",
+      "target": "PSTG"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Sealed Air Corp",
+      "path": "Stocks\\US\\NYSE\\SEE",
+      "reason": "not_active_tradable_on_alpaca",
+      "target": "SEE"
+    },
+    {
+      "asset_type": "stock",
+      "description": "Square Inc",
+      "path": "Stocks\\US\\NYSE\\SQ",
+      "reason": "mt5_not_full_trade",
+      "target": "SQ"
+    }
+  ],
+  "generated_at": "2026-08-18T08:14:28.083993+00:00",
+  "mappings": [
+    {
+      "asset_type": "stock",
+      "source": "A",
+      "target": "A"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AA",
+      "target": "AA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AAL",
+      "target": "AAL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AAP",
+      "target": "AAP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AAPL",
+      "target": "AAPL"
+    },
+    {
+      "asset_type": "etf",
+      "source": "AAXJ",
+      "target": "AAXJ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ABBV",
+      "target": "ABBV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ABT",
+      "target": "ABT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ACHC",
+      "target": "ACHC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ACM",
+      "target": "ACM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ACN",
+      "target": "ACN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ADBE",
+      "target": "ADBE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ADI",
+      "target": "ADI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ADM",
+      "target": "ADM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ADP",
+      "target": "ADP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ADSK",
+      "target": "ADSK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AEP",
+      "target": "AEP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AES",
+      "target": "AES"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AFG",
+      "target": "AFG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AFL",
+      "target": "AFL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AGCO",
+      "target": "AGCO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AIG",
+      "target": "AIG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AIZ",
+      "target": "AIZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AJG",
+      "target": "AJG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AKAM",
+      "target": "AKAM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ALB",
+      "target": "ALB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ALGN",
+      "target": "ALGN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ALK",
+      "target": "ALK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ALL",
+      "target": "ALL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ALLY",
+      "target": "ALLY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ALNY",
+      "target": "ALNY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMAT",
+      "target": "AMAT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMD",
+      "target": "AMD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AME",
+      "target": "AME"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMG",
+      "target": "AMG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMGN",
+      "target": "AMGN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMKR",
+      "target": "AMKR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMP",
+      "target": "AMP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMT",
+      "target": "AMT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AMZN",
+      "target": "AMZN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AN",
+      "target": "AN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ANET",
+      "target": "ANET"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AON",
+      "target": "AON"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AOS",
+      "target": "AOS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "APA",
+      "target": "APA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "APD",
+      "target": "APD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "APH",
+      "target": "APH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ARCC",
+      "target": "ARCC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ARES",
+      "target": "ARES"
+    },
+    {
+      "asset_type": "etf",
+      "source": "ARKG",
+      "target": "ARKG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "ARKK",
+      "target": "ARKK"
+    },
+    {
+      "asset_type": "etf",
+      "source": "ARKW",
+      "target": "ARKW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ARMK",
+      "target": "ARMK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ARW",
+      "target": "ARW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ARWR",
+      "target": "ARWR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ASH",
+      "target": "ASH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AVGO",
+      "target": "AVGO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AVTR",
+      "target": "AVTR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AVY",
+      "target": "AVY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AWI",
+      "target": "AWI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AWK",
+      "target": "AWK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AXON",
+      "target": "AXON"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AXP",
+      "target": "AXP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AXTA",
+      "target": "AXTA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AYI",
+      "target": "AYI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AZO",
+      "target": "AZO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "AZTA",
+      "target": "AZTA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BA",
+      "target": "BA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BAC",
+      "target": "BAC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BAH",
+      "target": "BAH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BALL",
+      "target": "BALL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BAX",
+      "target": "BAX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BBY",
+      "target": "BBY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BC",
+      "target": "BC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BDX",
+      "target": "BDX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BEN",
+      "target": "BEN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BFAM",
+      "target": "BFAM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BIIB",
+      "target": "BIIB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BILL",
+      "target": "BILL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BIO",
+      "target": "BIO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BJ",
+      "target": "BJ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BKNG",
+      "target": "BKNG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BKR",
+      "target": "BKR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BL",
+      "target": "BL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BLDR",
+      "target": "BLDR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BLK",
+      "target": "BLK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BMRN",
+      "target": "BMRN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BMY",
+      "target": "BMY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BR",
+      "target": "BR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BRK.B",
+      "target": "BRKb"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BRKR",
+      "target": "BRKR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BRO",
+      "target": "BRO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BSX",
+      "target": "BSX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BURL",
+      "target": "BURL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BWA",
+      "target": "BWA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BX",
+      "target": "BX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "BYD",
+      "target": "BYD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "C",
+      "target": "C"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CABO",
+      "target": "CABO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CACC",
+      "target": "CACC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CACI",
+      "target": "CACI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CAG",
+      "target": "CAG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CAH",
+      "target": "CAH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CAR",
+      "target": "CAR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CARR",
+      "target": "CARR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CASY",
+      "target": "CASY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CAT",
+      "target": "CAT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CB",
+      "target": "CB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CBRE",
+      "target": "CBRE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CC",
+      "target": "CC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CCI",
+      "target": "CCI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CCK",
+      "target": "CCK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CCL",
+      "target": "CCL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CDNS",
+      "target": "CDNS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CDW",
+      "target": "CDW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CE",
+      "target": "CE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CF",
+      "target": "CF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CFG",
+      "target": "CFG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CFR",
+      "target": "CFR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CG",
+      "target": "CG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CGNX",
+      "target": "CGNX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CHD",
+      "target": "CHD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CHDN",
+      "target": "CHDN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CHE",
+      "target": "CHE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CHRW",
+      "target": "CHRW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CHTR",
+      "target": "CHTR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CHWY",
+      "target": "CHWY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CI",
+      "target": "CI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CIEN",
+      "target": "CIEN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CINF",
+      "target": "CINF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CL",
+      "target": "CL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CLF",
+      "target": "CLF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CLX",
+      "target": "CLX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CMCSA",
+      "target": "CMCSA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CME",
+      "target": "CME"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CMG",
+      "target": "CMG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CMI",
+      "target": "CMI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CMS",
+      "target": "CMS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CNC",
+      "target": "CNC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CNP",
+      "target": "CNP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COF",
+      "target": "COF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COHR",
+      "target": "COHR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COIN",
+      "target": "COIN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COLM",
+      "target": "COLM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COO",
+      "target": "COO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COP",
+      "target": "COP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COR",
+      "target": "COR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "COST",
+      "target": "COST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CPAY",
+      "target": "CPAY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CPRT",
+      "target": "CPRT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CRL",
+      "target": "CRL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CRM",
+      "target": "CRM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CROX",
+      "target": "CROX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CRWD",
+      "target": "CRWD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CSCO",
+      "target": "CSCO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CSGP",
+      "target": "CSGP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CSL",
+      "target": "CSL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CSX",
+      "target": "CSX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CTAS",
+      "target": "CTAS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CTSH",
+      "target": "CTSH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CTVA",
+      "target": "CTVA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CVNA",
+      "target": "CVNA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CVS",
+      "target": "CVS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "CVX",
+      "target": "CVX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "D",
+      "target": "D"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DAL",
+      "target": "DAL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DAR",
+      "target": "DAR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DBX",
+      "target": "DBX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DD",
+      "target": "DD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DDOG",
+      "target": "DDOG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DE",
+      "target": "DE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DECK",
+      "target": "DECK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DELL",
+      "target": "DELL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DG",
+      "target": "DG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "DGRO",
+      "target": "DGRO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DGX",
+      "target": "DGX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DHI",
+      "target": "DHI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DHR",
+      "target": "DHR"
+    },
+    {
+      "asset_type": "etf",
+      "source": "DIA",
+      "target": "DIA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DIS",
+      "target": "DIS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DKS",
+      "target": "DKS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DLB",
+      "target": "DLB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DLTR",
+      "target": "DLTR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DNLI",
+      "target": "DNLI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DOCU",
+      "target": "DOCU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DOV",
+      "target": "DOV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DOW",
+      "target": "DOW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DOX",
+      "target": "DOX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DPZ",
+      "target": "DPZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DRI",
+      "target": "DRI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DT",
+      "target": "DT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DTE",
+      "target": "DTE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DUK",
+      "target": "DUK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DVA",
+      "target": "DVA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DVN",
+      "target": "DVN"
+    },
+    {
+      "asset_type": "etf",
+      "source": "DVY",
+      "target": "DVY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DXC",
+      "target": "DXC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "DXCM",
+      "target": "DXCM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EBAY",
+      "target": "EBAY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ECL",
+      "target": "ECL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EEFT",
+      "target": "EEFT"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EEM",
+      "target": "EEM"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EFA",
+      "target": "EFA"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EFAV",
+      "target": "EFAV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EFG",
+      "target": "EFG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EFV",
+      "target": "EFV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EFX",
+      "target": "EFX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EHC",
+      "target": "EHC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EIX",
+      "target": "EIX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EL",
+      "target": "EL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ELAN",
+      "target": "ELAN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ELV",
+      "target": "ELV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EMB",
+      "target": "EMB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EME",
+      "target": "EME"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EMN",
+      "target": "EMN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EMR",
+      "target": "EMR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ENOV",
+      "target": "ENOV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ENPH",
+      "target": "ENPH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ENTG",
+      "target": "ENTG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EOG",
+      "target": "EOG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EPAM",
+      "target": "EPAM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EQH",
+      "target": "EQH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EQT",
+      "target": "EQT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ES",
+      "target": "ES"
+    },
+    {
+      "asset_type": "etf",
+      "source": "ESGU",
+      "target": "ESGU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ESI",
+      "target": "ESI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ESNT",
+      "target": "ESNT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ESTC",
+      "target": "ESTC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ETN",
+      "target": "ETN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ETR",
+      "target": "ETR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ETSY",
+      "target": "ETSY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EVR",
+      "target": "EVR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EVRG",
+      "target": "EVRG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EW",
+      "target": "EW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EWBC",
+      "target": "EWBC"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EWJ",
+      "target": "EWJ"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EWT",
+      "target": "EWT"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EWY",
+      "target": "EWY"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EWZ",
+      "target": "EWZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EXC",
+      "target": "EXC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EXEL",
+      "target": "EXEL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EXP",
+      "target": "EXP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EXPD",
+      "target": "EXPD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "EXPE",
+      "target": "EXPE"
+    },
+    {
+      "asset_type": "etf",
+      "source": "EZU",
+      "target": "EZU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "F",
+      "target": "F"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FAF",
+      "target": "FAF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FANG",
+      "target": "FANG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FAST",
+      "target": "FAST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FBIN",
+      "target": "FBIN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FCX",
+      "target": "FCX"
+    },
+    {
+      "asset_type": "etf",
+      "source": "FDN",
+      "target": "FDN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FDS",
+      "target": "FDS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FDX",
+      "target": "FDX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FE",
+      "target": "FE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FFIV",
+      "target": "FFIV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FHN",
+      "target": "FHN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FICO",
+      "target": "FICO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FIS",
+      "target": "FIS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FISV",
+      "target": "FISV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FITB",
+      "target": "FITB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FIVE",
+      "target": "FIVE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FIVN",
+      "target": "FIVN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FLEX",
+      "target": "FLEX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FLS",
+      "target": "FLS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FMC",
+      "target": "FMC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FND",
+      "target": "FND"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FNF",
+      "target": "FNF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FOX",
+      "target": "FOX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FOXA",
+      "target": "FOXA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FOXF",
+      "target": "FOXF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FRPT",
+      "target": "FRPT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FSLR",
+      "target": "FSLR"
+    },
+    {
+      "asset_type": "etf",
+      "source": "FTEC",
+      "target": "FTEC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FTNT",
+      "target": "FTNT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "FTV",
+      "target": "FTV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "FVD",
+      "target": "FVD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "G",
+      "target": "G"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GD",
+      "target": "GD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GDDY",
+      "target": "GDDY"
+    },
+    {
+      "asset_type": "etf",
+      "source": "GDX",
+      "target": "GDX"
+    },
+    {
+      "asset_type": "etf",
+      "source": "GDXJ",
+      "target": "GDXJ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GE",
+      "target": "GE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GEN",
+      "target": "GEN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GGG",
+      "target": "GGG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GH",
+      "target": "GH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GILD",
+      "target": "GILD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GIS",
+      "target": "GIS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GL",
+      "target": "GL"
+    },
+    {
+      "asset_type": "etf",
+      "source": "GLD",
+      "target": "GLD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GLW",
+      "target": "GLW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GM",
+      "target": "GM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GMED",
+      "target": "GMED"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GNRC",
+      "target": "GNRC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GNTX",
+      "target": "GNTX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GOOG",
+      "target": "GOOG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GOOGL",
+      "target": "GOOGL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GPC",
+      "target": "GPC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GPK",
+      "target": "GPK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GPN",
+      "target": "GPN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GS",
+      "target": "GS"
+    },
+    {
+      "asset_type": "etf",
+      "source": "GSLC",
+      "target": "GSLC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GWRE",
+      "target": "GWRE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "GWW",
+      "target": "GWW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "H",
+      "target": "H"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HAL",
+      "target": "HAL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HALO",
+      "target": "HALO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HAS",
+      "target": "HAS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HBAN",
+      "target": "HBAN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HCA",
+      "target": "HCA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HD",
+      "target": "HD"
+    },
+    {
+      "asset_type": "etf",
+      "source": "HDV",
+      "target": "HDV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HEI",
+      "target": "HEI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HELE",
+      "target": "HELE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HIG",
+      "target": "HIG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HII",
+      "target": "HII"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HLT",
+      "target": "HLT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HOG",
+      "target": "HOG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HON",
+      "target": "HON"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HPE",
+      "target": "HPE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HPQ",
+      "target": "HPQ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HQY",
+      "target": "HQY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HSIC",
+      "target": "HSIC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HUBB",
+      "target": "HUBB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HUBS",
+      "target": "HUBS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HUM",
+      "target": "HUM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HUN",
+      "target": "HUN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HWM",
+      "target": "HWM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "HXL",
+      "target": "HXL"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IBB",
+      "target": "IBB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IBKR",
+      "target": "IBKR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IBM",
+      "target": "IBM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ICE",
+      "target": "ICE"
+    },
+    {
+      "asset_type": "etf",
+      "source": "ICLN",
+      "target": "ICLN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IDXX",
+      "target": "IDXX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IEX",
+      "target": "IEX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IFF",
+      "target": "IFF"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IGV",
+      "target": "IGV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IHI",
+      "target": "IHI"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IJH",
+      "target": "IJH"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IJR",
+      "target": "IJR"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IJS",
+      "target": "IJS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ILMN",
+      "target": "ILMN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "INCY",
+      "target": "INCY"
+    },
+    {
+      "asset_type": "etf",
+      "source": "INDA",
+      "target": "INDA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "INGR",
+      "target": "INGR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "INSP",
+      "target": "INSP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "INTC",
+      "target": "INTC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "INTU",
+      "target": "INTU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IONS",
+      "target": "IONS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IP",
+      "target": "IP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IPGP",
+      "target": "IPGP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IQV",
+      "target": "IQV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IR",
+      "target": "IR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IRDM",
+      "target": "IRDM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ISRG",
+      "target": "ISRG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IT",
+      "target": "IT"
+    },
+    {
+      "asset_type": "etf",
+      "source": "ITOT",
+      "target": "ITOT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ITT",
+      "target": "ITT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ITW",
+      "target": "ITW"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IUSG",
+      "target": "IUSG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IUSV",
+      "target": "IUSV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IVE",
+      "target": "IVE"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IVW",
+      "target": "IVW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "IVZ",
+      "target": "IVZ"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IWB",
+      "target": "IWB"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IWD",
+      "target": "IWD"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IWF",
+      "target": "IWF"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IWM",
+      "target": "IWM"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IWN",
+      "target": "IWN"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IWO",
+      "target": "IWO"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IWS",
+      "target": "IWS"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IYR",
+      "target": "IYR"
+    },
+    {
+      "asset_type": "etf",
+      "source": "IYW",
+      "target": "IYW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "J",
+      "target": "J"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JBHT",
+      "target": "JBHT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JBL",
+      "target": "JBL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JCI",
+      "target": "JCI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JEF",
+      "target": "JEF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JKHY",
+      "target": "JKHY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JLL",
+      "target": "JLL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JNJ",
+      "target": "JNJ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "JPM",
+      "target": "JPM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KBR",
+      "target": "KBR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KDP",
+      "target": "KDP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KEY",
+      "target": "KEY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KEYS",
+      "target": "KEYS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KHC",
+      "target": "KHC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KKR",
+      "target": "KKR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KLAC",
+      "target": "KLAC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KMB",
+      "target": "KMB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KMI",
+      "target": "KMI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KMX",
+      "target": "KMX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KNX",
+      "target": "KNX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KO",
+      "target": "KO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KR",
+      "target": "KR"
+    },
+    {
+      "asset_type": "etf",
+      "source": "KRE",
+      "target": "KRE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "KSS",
+      "target": "KSS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "L",
+      "target": "L"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LAD",
+      "target": "LAD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LDOS",
+      "target": "LDOS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LEA",
+      "target": "LEA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LEG",
+      "target": "LEG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LEN",
+      "target": "LEN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LEVI",
+      "target": "LEVI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LH",
+      "target": "LH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LHX",
+      "target": "LHX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LII",
+      "target": "LII"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LITE",
+      "target": "LITE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LKQ",
+      "target": "LKQ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LLY",
+      "target": "LLY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LMT",
+      "target": "LMT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LNC",
+      "target": "LNC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LNT",
+      "target": "LNT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LOW",
+      "target": "LOW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LPLA",
+      "target": "LPLA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LPX",
+      "target": "LPX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LRCX",
+      "target": "LRCX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LSCC",
+      "target": "LSCC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LSTR",
+      "target": "LSTR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LUV",
+      "target": "LUV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LVS",
+      "target": "LVS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LW",
+      "target": "LW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LYB",
+      "target": "LYB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LYFT",
+      "target": "LYFT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "LYV",
+      "target": "LYV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "M",
+      "target": "M"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MA",
+      "target": "MA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MAN",
+      "target": "MAN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MANH",
+      "target": "MANH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MAR",
+      "target": "MAR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MAS",
+      "target": "MAS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MAT",
+      "target": "MAT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MCD",
+      "target": "MCD"
+    },
+    {
+      "asset_type": "etf",
+      "source": "MCHI",
+      "target": "MCHI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MCHP",
+      "target": "MCHP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MCK",
+      "target": "MCK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MCO",
+      "target": "MCO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MDB",
+      "target": "MDB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MDLZ",
+      "target": "MDLZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MDT",
+      "target": "MDT"
+    },
+    {
+      "asset_type": "etf",
+      "source": "MDY",
+      "target": "MDY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MEDP",
+      "target": "MEDP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MET",
+      "target": "MET"
+    },
+    {
+      "asset_type": "stock",
+      "source": "META",
+      "target": "META"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MGM",
+      "target": "MGM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MHK",
+      "target": "MHK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MIDD",
+      "target": "MIDD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MKL",
+      "target": "MKL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MKSI",
+      "target": "MKSI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MKTX",
+      "target": "MKTX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MLM",
+      "target": "MLM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MMM",
+      "target": "MMM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MNST",
+      "target": "MNST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MO",
+      "target": "MO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MOH",
+      "target": "MOH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MOS",
+      "target": "MOS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MPC",
+      "target": "MPC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MPWR",
+      "target": "MPWR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MRK",
+      "target": "MRK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MRNA",
+      "target": "MRNA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MRSH",
+      "target": "MRSH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MRVL",
+      "target": "MRVL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MS",
+      "target": "MS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MSCI",
+      "target": "MSCI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MSFT",
+      "target": "MSFT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MSI",
+      "target": "MSI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MSM",
+      "target": "MSM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MSTR",
+      "target": "MSTR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MTB",
+      "target": "MTB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MTD",
+      "target": "MTD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MTN",
+      "target": "MTN"
+    },
+    {
+      "asset_type": "etf",
+      "source": "MTUM",
+      "target": "MTUM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MTZ",
+      "target": "MTZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "MU",
+      "target": "MU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NBIX",
+      "target": "NBIX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NCLH",
+      "target": "NCLH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NDAQ",
+      "target": "NDAQ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NDSN",
+      "target": "NDSN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NEE",
+      "target": "NEE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NEM",
+      "target": "NEM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NET",
+      "target": "NET"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NFLX",
+      "target": "NFLX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NI",
+      "target": "NI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NKE",
+      "target": "NKE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NOC",
+      "target": "NOC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NOV",
+      "target": "NOV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NOW",
+      "target": "NOW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NRG",
+      "target": "NRG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NSC",
+      "target": "NSC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NTAP",
+      "target": "NTAP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NTNX",
+      "target": "NTNX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NTRS",
+      "target": "NTRS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NUE",
+      "target": "NUE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NVDA",
+      "target": "NVDA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NVST",
+      "target": "NVST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NWL",
+      "target": "NWL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NWSA",
+      "target": "NWSA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NXST",
+      "target": "NXST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "NYT",
+      "target": "NYT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OC",
+      "target": "OC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ODFL",
+      "target": "ODFL"
+    },
+    {
+      "asset_type": "etf",
+      "source": "OEF",
+      "target": "OEF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OGE",
+      "target": "OGE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OKE",
+      "target": "OKE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OKTA",
+      "target": "OKTA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OLED",
+      "target": "OLED"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OLLI",
+      "target": "OLLI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OLN",
+      "target": "OLN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OMC",
+      "target": "OMC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OMCL",
+      "target": "OMCL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OMF",
+      "target": "OMF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ON",
+      "target": "ON"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ORCL",
+      "target": "ORCL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ORI",
+      "target": "ORI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ORLY",
+      "target": "ORLY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OSK",
+      "target": "OSK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OTIS",
+      "target": "OTIS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OXY",
+      "target": "OXY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "OZK",
+      "target": "OZK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "P",
+      "target": "P"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PANW",
+      "target": "PANW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PAYC",
+      "target": "PAYC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PAYX",
+      "target": "PAYX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PCAR",
+      "target": "PCAR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PCTY",
+      "target": "PCTY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PEG",
+      "target": "PEG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PEGA",
+      "target": "PEGA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PEN",
+      "target": "PEN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PENN",
+      "target": "PENN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PEP",
+      "target": "PEP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PFE",
+      "target": "PFE"
+    },
+    {
+      "asset_type": "etf",
+      "source": "PFF",
+      "target": "PFF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PFG",
+      "target": "PFG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PFGC",
+      "target": "PFGC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PG",
+      "target": "PG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PGNY",
+      "target": "PGNY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PGR",
+      "target": "PGR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PH",
+      "target": "PH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PHM",
+      "target": "PHM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PII",
+      "target": "PII"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PINS",
+      "target": "PINS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PKG",
+      "target": "PKG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PLD",
+      "target": "PLD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PLNT",
+      "target": "PLNT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PM",
+      "target": "PM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PNC",
+      "target": "PNC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PNFP",
+      "target": "PNFP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PNW",
+      "target": "PNW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PODD",
+      "target": "PODD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "POOL",
+      "target": "POOL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "POST",
+      "target": "POST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PPG",
+      "target": "PPG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PPL",
+      "target": "PPL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PRU",
+      "target": "PRU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PSA",
+      "target": "PSA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PTC",
+      "target": "PTC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PVH",
+      "target": "PVH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PWR",
+      "target": "PWR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "PYPL",
+      "target": "PYPL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "QCOM",
+      "target": "QCOM"
+    },
+    {
+      "asset_type": "etf",
+      "source": "QQQ",
+      "target": "QQQ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "QRVO",
+      "target": "QRVO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "QTWO",
+      "target": "QTWO"
+    },
+    {
+      "asset_type": "etf",
+      "source": "QUAL",
+      "target": "QUAL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RARE",
+      "target": "RARE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RCL",
+      "target": "RCL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "REGN",
+      "target": "REGN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RF",
+      "target": "RF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RGA",
+      "target": "RGA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RGEN",
+      "target": "RGEN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RGLD",
+      "target": "RGLD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RH",
+      "target": "RH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RHI",
+      "target": "RHI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RJF",
+      "target": "RJF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RL",
+      "target": "RL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RMD",
+      "target": "RMD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RNG",
+      "target": "RNG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ROK",
+      "target": "ROK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ROKU",
+      "target": "ROKU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ROL",
+      "target": "ROL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ROP",
+      "target": "ROP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ROST",
+      "target": "ROST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RPM",
+      "target": "RPM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RRR",
+      "target": "RRR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RRX",
+      "target": "RRX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RS",
+      "target": "RS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RSG",
+      "target": "RSG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "RSP",
+      "target": "RSP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RTX",
+      "target": "RTX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "RVTY",
+      "target": "RVTY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SAIA",
+      "target": "SAIA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SAIC",
+      "target": "SAIC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SAM",
+      "target": "SAM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SBUX",
+      "target": "SBUX"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SCHB",
+      "target": "SCHB"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SCHD",
+      "target": "SCHD"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SCHF",
+      "target": "SCHF"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SCHG",
+      "target": "SCHG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SCHV",
+      "target": "SCHV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SCHW",
+      "target": "SCHW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SCI",
+      "target": "SCI"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SCZ",
+      "target": "SCZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SF",
+      "target": "SF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SGI",
+      "target": "SGI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SHW",
+      "target": "SHW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SITE",
+      "target": "SITE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SJM",
+      "target": "SJM"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SKYY",
+      "target": "SKYY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SLAB",
+      "target": "SLAB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SLB",
+      "target": "SLB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SLM",
+      "target": "SLM"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SLV",
+      "target": "SLV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SMG",
+      "target": "SMG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SMH",
+      "target": "SMH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SNA",
+      "target": "SNA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SNAP",
+      "target": "SNAP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SNPS",
+      "target": "SNPS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SNX",
+      "target": "SNX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SO",
+      "target": "SO"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SOXX",
+      "target": "SOXX"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SPDW",
+      "target": "SPDW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SPG",
+      "target": "SPG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SPGI",
+      "target": "SPGI"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SPLV",
+      "target": "SPLV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SPY",
+      "target": "SPY"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SPYG",
+      "target": "SPYG"
+    },
+    {
+      "asset_type": "etf",
+      "source": "SPYV",
+      "target": "SPYV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SRE",
+      "target": "SRE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SRPT",
+      "target": "SRPT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SSNC",
+      "target": "SSNC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ST",
+      "target": "ST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "STE",
+      "target": "STE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "STLD",
+      "target": "STLD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "STT",
+      "target": "STT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "STZ",
+      "target": "STZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SWK",
+      "target": "SWK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SWKS",
+      "target": "SWKS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SYF",
+      "target": "SYF"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SYK",
+      "target": "SYK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SYNA",
+      "target": "SYNA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "SYY",
+      "target": "SYY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "T",
+      "target": "T"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TAP",
+      "target": "TAP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TDG",
+      "target": "TDG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TDY",
+      "target": "TDY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TECH",
+      "target": "TECH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TER",
+      "target": "TER"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TFC",
+      "target": "TFC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TFX",
+      "target": "TFX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TGT",
+      "target": "TGT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "THC",
+      "target": "THC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "THO",
+      "target": "THO"
+    },
+    {
+      "asset_type": "etf",
+      "source": "TIP",
+      "target": "TIP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TJX",
+      "target": "TJX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TKR",
+      "target": "TKR"
+    },
+    {
+      "asset_type": "etf",
+      "source": "TLT",
+      "target": "TLT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TMO",
+      "target": "TMO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TMUS",
+      "target": "TMUS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TNDM",
+      "target": "TNDM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TNL",
+      "target": "TNL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TOL",
+      "target": "TOL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TPL",
+      "target": "TPL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TPR",
+      "target": "TPR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TREX",
+      "target": "TREX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TRGP",
+      "target": "TRGP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TRIP",
+      "target": "TRIP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TRMB",
+      "target": "TRMB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TROW",
+      "target": "TROW"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TRU",
+      "target": "TRU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TRV",
+      "target": "TRV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TSCO",
+      "target": "TSCO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TSLA",
+      "target": "TSLA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TSN",
+      "target": "TSN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TTC",
+      "target": "TTC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TTD",
+      "target": "TTD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TTEK",
+      "target": "TTEK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TTWO",
+      "target": "TTWO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TWLO",
+      "target": "TWLO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TXG",
+      "target": "TXG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TXN",
+      "target": "TXN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TXRH",
+      "target": "TXRH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TXT",
+      "target": "TXT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "TYL",
+      "target": "TYL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UAL",
+      "target": "UAL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UBER",
+      "target": "UBER"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UGI",
+      "target": "UGI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UHS",
+      "target": "UHS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ULTA",
+      "target": "ULTA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UNH",
+      "target": "UNH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UNM",
+      "target": "UNM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UNP",
+      "target": "UNP"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UPS",
+      "target": "UPS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "URI",
+      "target": "URI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "USB",
+      "target": "USB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "USFD",
+      "target": "USFD"
+    },
+    {
+      "asset_type": "etf",
+      "source": "USMV",
+      "target": "USMV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "UTHR",
+      "target": "UTHR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "V",
+      "target": "V"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VAC",
+      "target": "VAC"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VDE",
+      "target": "VDE"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VEA",
+      "target": "VEA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VEEV",
+      "target": "VEEV"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VFC",
+      "target": "VFC"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VGT",
+      "target": "VGT"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VHT",
+      "target": "VHT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VIR",
+      "target": "VIR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VIRT",
+      "target": "VIRT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VLO",
+      "target": "VLO"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VLUE",
+      "target": "VLUE"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VMC",
+      "target": "VMC"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VNQ",
+      "target": "VNQ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VOYA",
+      "target": "VOYA"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VPL",
+      "target": "VPL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VRNS",
+      "target": "VRNS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VRSK",
+      "target": "VRSK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VRSN",
+      "target": "VRSN"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VRTX",
+      "target": "VRTX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VST",
+      "target": "VST"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VT",
+      "target": "VT"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VTI",
+      "target": "VTI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VTRS",
+      "target": "VTRS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VVV",
+      "target": "VVV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VWO",
+      "target": "VWO"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VXF",
+      "target": "VXF"
+    },
+    {
+      "asset_type": "etf",
+      "source": "VXUS",
+      "target": "VXUS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VYX",
+      "target": "VYX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "VZ",
+      "target": "VZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "W",
+      "target": "W"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WAB",
+      "target": "WAB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WAL",
+      "target": "WAL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WAT",
+      "target": "WAT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WCC",
+      "target": "WCC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WDAY",
+      "target": "WDAY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WDC",
+      "target": "WDC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WEC",
+      "target": "WEC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WEX",
+      "target": "WEX"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WFC",
+      "target": "WFC"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WH",
+      "target": "WH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WHR",
+      "target": "WHR"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WK",
+      "target": "WK"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WM",
+      "target": "WM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WMB",
+      "target": "WMB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WMS",
+      "target": "WMS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WMT",
+      "target": "WMT"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WRB",
+      "target": "WRB"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WSM",
+      "target": "WSM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WSO",
+      "target": "WSO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WST",
+      "target": "WST"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WTRG",
+      "target": "WTRG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WU",
+      "target": "WU"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WWD",
+      "target": "WWD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "WYNN",
+      "target": "WYNN"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XBI",
+      "target": "XBI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "XEL",
+      "target": "XEL"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLB",
+      "target": "XLB"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLC",
+      "target": "XLC"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLE",
+      "target": "XLE"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLF",
+      "target": "XLF"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLI",
+      "target": "XLI"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLK",
+      "target": "XLK"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLP",
+      "target": "XLP"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLU",
+      "target": "XLU"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLV",
+      "target": "XLV"
+    },
+    {
+      "asset_type": "etf",
+      "source": "XLY",
+      "target": "XLY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "XOM",
+      "target": "XOM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "XPO",
+      "target": "XPO"
+    },
+    {
+      "asset_type": "stock",
+      "source": "XRAY",
+      "target": "XRAY"
+    },
+    {
+      "asset_type": "stock",
+      "source": "XYL",
+      "target": "XYL"
+    },
+    {
+      "asset_type": "stock",
+      "source": "XYZ",
+      "target": "XYZ"
+    },
+    {
+      "asset_type": "stock",
+      "source": "YETI",
+      "target": "YETI"
+    },
+    {
+      "asset_type": "stock",
+      "source": "YUM",
+      "target": "YUM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZBH",
+      "target": "ZBH"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZBRA",
+      "target": "ZBRA"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZD",
+      "target": "ZD"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZG",
+      "target": "ZG"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZION",
+      "target": "ZION"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZM",
+      "target": "ZM"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZS",
+      "target": "ZS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZTS",
+      "target": "ZTS"
+    },
+    {
+      "asset_type": "stock",
+      "source": "ZWS",
+      "target": "ZWS"
+    }
+  ],
+  "schema_version": 1
+}

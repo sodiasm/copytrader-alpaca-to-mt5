@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpaca-mt5-copytrader"
+version = "0.1.0"
+description = "Long-only Alpaca paper to MetaTrader 5 demo fill copier"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "alpaca-py==0.44.0",
+  "MetaTrader5==5.0.6090",
+]
+
+[project.scripts]
+copytrader = "copytrader.cli:main"
+
+[tool.setuptools]
+packages = ["copytrader"]

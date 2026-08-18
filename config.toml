@@ -1,0 +1,23 @@
+[alpaca]
+paper = true
+
+[mt5]
+terminal_path = "C:\\Program Files\\Darwinex MetaTrader 5 Demo1\\terminal64.exe"
+require_demo = true
+magic = 926701
+
+[copy]
+long_only = true
+max_price_deviation_pct = 0.5
+poll_interval_seconds = 15
+reconciliation_plan_ttl_seconds = 300
+database_path = "state/copytrader.db"
+log_directory = "logs"
+
+[symbol_universe]
+snapshot_path = "symbols.us-stocks-etfs.json"
+stock_path_prefix = "Stocks\\US\\"
+etf_path_prefix = "ETFs\\"
+
+[symbol_universe.aliases]
+"BRK.B" = "BRKb"
