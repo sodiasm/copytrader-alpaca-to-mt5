@@ -1,6 +1,6 @@
 # Alpaca to MetaTrader 5 Copy Trader
 
-This project copies **actual Alpaca paper fills** to the local **Darwinex MetaTrader 5 Demo1** terminal. It is intentionally long-only and paper/demo-only in version 1.
+This project copies **actual Alpaca paper fills** to a configured local **MetaTrader 5 demo** terminal. It is intentionally long-only and paper/demo-only in version 1.
 
 ## Safety behavior
 
@@ -12,7 +12,55 @@ This project copies **actual Alpaca paper fills** to the local **Darwinex MetaTr
 - Uses MT5 margin/order checks and verifies the resulting deal and position.
 - Persists execution IDs in SQLite and does not blindly retry ambiguous MT5 results.
 - Pauses on disconnects, drift, closed/untradable symbols, or uncertain execution.
+- Does not place corrective or catch-up MT5 trades when a position mismatch is found.
 - Has no portfolio exposure or daily-loss cap, as selected for this build.
+
+## Price-deviation guard and paused copies
+
+`[copy].max_price_deviation_pct` is a pre-trade safety limit. For every
+Alpaca `fill` or `partial_fill`, the copier compares the fill event's `price`
+with the current MT5 quote for the mapped symbol:
+
+```text
+abs(MT5 quote - Alpaca fill price) / Alpaca fill price * 100
+```
+
+For a copied buy it uses the MT5 Ask; for a copied sell it uses the MT5 Bid.
+For example, an Alpaca fill at 100.00 and an MT5 Ask at 100.60 produces a
+0.60% deviation. With the default limit of `0.5`, that copy is blocked.
+
+Keep the setting in `config.toml`. Omitting it does not disable the check: the
+application applies the default of `0.5`. Valid values are greater than zero
+and no more than `10`.
+
+If the deviation exceeds the configured limit, the copier does not send an
+MT5 order. It records the fill as paused and pauses copying for that source
+symbol. Other mapped symbols can continue copying, but neither the failed
+fill nor later fills for the paused symbol are automatically retried. This
+prevents an old fill from being copied later at an unknown price.
+
+The MT5 quote is checked before sending the order; it is not a comparison with
+the eventual MT5 execution price. The same setting also determines the MT5
+order's permitted quote movement, expressed in MT5 points.
+
+To investigate and safely resume a paused symbol, inspect status, then create
+a fresh reconciliation plan:
+
+```powershell
+.\.venv\Scripts\python.exe -m copytrader --config .\config.toml status
+.\.venv\Scripts\python.exe -m copytrader --config .\config.toml reconcile plan
+```
+
+Review the plan and live positions before applying the exact, newly generated
+plan ID:
+
+```powershell
+.\.venv\Scripts\python.exe -m copytrader --config .\config.toml reconcile apply PLAN_ID --yes
+```
+
+Reconciliation does not place a catch-up trade for the blocked fill. It only
+unpauses when the current account positions agree with the application's
+durable state.
 
 ## Install
 
@@ -30,11 +78,17 @@ Set `[mt5].terminal_path` in `config.toml` to the exact executable for the MT5 i
 
 ```toml
 [mt5]
-terminal_path = "C:\\Program Files\\Darwinex MetaTrader 5 Demo1\\terminal64.exe"
+terminal_path = "C:\\Path\\To\\MetaTrader 5\\terminal64.exe"
+portable = false
 require_demo = true
 ```
 
 The configured path must exist and point to a file. The copier passes that exact path to MetaTrader 5; it does not search for another installation or silently fall back to one. Stop the copier before changing the path.
+
+For a separately isolated terminal, set `portable = true` only when the
+terminal is launched with `/portable` from its own user-writable installation
+directory. Portable mode is passed directly to MetaTrader5's `initialize` call;
+it does not discover or select another terminal for you.
 
 After changing it, run the read-only preflight and check that `mt5_connected` reports the intended terminal path and `mt5_demo_mode` reports `demo`:
 
@@ -94,6 +148,55 @@ On any pause, generate a state-bound reconciliation plan:
 
 `apply` only unpauses when live positions already agree with durable state. Version 1 deliberately does not place corrective reconciliation trades.
 
+## Position drift and paused symbols
+
+The copier keeps its own durable allocation ledger in `state/copytrader.db`.
+The `managed` value in a drift message is this ledger's quantity; it is not a
+field supplied by Alpaca or MetaTrader 5. The ledger is updated only when the
+copier successfully processes a source fill (including fills too small to
+produce an MT5 order).
+
+For example:
+
+```text
+persistent position drift on FITB: alpaca=9/managed=0;mt5=0/managed=0
+```
+
+means Alpaca currently reports 9 FITB shares, while the copier has no recorded
+managed FITB quantity. MT5 is flat, which agrees with the copier's recorded
+MT5 allocation. The message alone does not say why the difference exists: the
+source position may predate the copier, a fill may have been missed, or prior
+state may not match the live accounts.
+
+While the copy queue is idle, the application checks all mapped positions at
+the configured `poll_interval_seconds` (15 seconds by default). It pauses a
+symbol only after it sees the *same* mismatch on two consecutive checks,
+normally about 30 seconds after first observing an unchanged mismatch. A busy
+copy queue delays the check.
+
+When drift becomes persistent, the application pauses that source symbol and
+marks the stream as `drift_paused`. It does **not** buy the missing MT5
+quantity, sell either account, retry on a timer, or backfill the position.
+Later fills for that paused symbol are recorded as paused rather than copied.
+
+To investigate a pause, create a fresh, read-only reconciliation plan:
+
+```powershell
+.\.venv\Scripts\python.exe -m copytrader --config .\config.toml status
+.\.venv\Scripts\python.exe -m copytrader --config .\config.toml reconcile plan
+```
+
+Review the live positions, durable allocations, logs, and any unresolved
+actions. Once live positions agree with the durable state, create a new plan
+and apply its exact `plan_id`:
+
+```powershell
+.\.venv\Scripts\python.exe -m copytrader --config .\config.toml reconcile apply PLAN_ID --yes
+```
+
+Do not manually edit the SQLite database or assume that applying a plan will
+trade away a mismatch: `apply` refuses unresolved position differences.
+
 ## Automated paper/demo smoke test
 
 Only after preflight passes and both mapped accounts are flat:
@@ -113,7 +216,7 @@ After the interactive run and smoke test pass:
 .\scripts\install-task.ps1
 ```
 
-The task runs as the current interactive user 30 seconds after logon and restarts after failures. The Demo1 terminal must remain running and logged in under that same user.
+The task runs as the current interactive user 30 seconds after logon and restarts after failures. The configured MT5 terminal must remain running and logged in under that same user.
 
 ## Run two independent copies
 
@@ -146,9 +249,13 @@ In each checkout:
 2. Put only that Alpaca paper account's credentials and MT5 credentials in its
    `.env`.
 3. Install the MT5 terminals in different directories. MetaTrader cannot run
-   two terminal copies from the same installation directory.
-4. Set `[mt5].terminal_path` to that checkout's intended terminal executable
-   and give each installation a different positive `[mt5].magic` value.
+   two terminal copies from the same installation directory. If the normal
+   Python IPC connection fails, copy the affected terminal to a user-writable
+   directory, launch it with `/portable`, and set `portable = true` in only its
+   checkout.
+4. Set `[mt5].terminal_path` to that checkout's intended terminal executable,
+   set `portable` to match how that terminal is launched, and give each
+   installation a different positive `[mt5].magic` value.
 5. Preview `symbols sync-us`, review the broker-specific mappings and contract
    specifications, then write a separate symbol snapshot for that checkout.
 6. Run the read-only preflight and verify the reported Alpaca account ID, MT5
