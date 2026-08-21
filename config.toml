@@ -3,12 +3,14 @@ paper = true
 
 [mt5]
 terminal_path = "C:\\Program Files\\Darwinex MetaTrader 5 Demo1\\terminal64.exe"
+portable = false
 require_demo = true
 magic = 926701
 
 [copy]
 long_only = true
 max_price_deviation_pct = 0.5
+quote_acquisition_timeout_seconds = 5
 poll_interval_seconds = 15
 reconciliation_plan_ttl_seconds = 300
 database_path = "state/copytrader.db"

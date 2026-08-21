@@ -20,6 +20,8 @@ starting a copier.
   instruments at both brokers.
 - Rejects a copy when the current MT5 quote differs too far from the Alpaca
   fill price (0.50% by default).
+- Waits briefly for a fresh positive MT5 quote, then uses that same quote for
+  sizing, order validation, and order submission.
 - Records executions, allocations, pauses, and reconciliation data in SQLite.
 - Pauses on ambiguous execution, connection loss, position drift, unavailable
   prices, closed symbols, or invalid mappings.
@@ -58,11 +60,23 @@ terminal_path = "C:\\Program Files\\Broker MT5 A\\terminal64.exe"
 portable = false
 require_demo = true
 magic = 10001
+
+[copy]
+max_price_deviation_pct = 0.5
+quote_acquisition_timeout_seconds = 5
 ```
 
 `terminal_path` is mandatory. The copier passes this exact path to the MT5
 Python API and does not search for, discover, or fall back to another terminal.
 Use a distinct positive `magic` value for every independent copier.
+
+`quote_acquisition_timeout_seconds` controls how long a fill waits for a
+fresh, positive MT5 bid/Ask when the first quote is missing, zero, or stale.
+It defaults to 5 seconds and accepts values from 0 to 10; `0` preserves
+fail-fast behavior. The retry cadence is 250 ms and a quote older than 2
+seconds is rejected. A timeout pauses the event without creating an MT5 order.
+The copier never substitutes the Alpaca fill price for the MT5 price, and it
+does not retry a previously paused fill.
 
 ## Validate before starting
 
@@ -170,7 +184,20 @@ git clone https://github.com/sodiasm/copytrader-alpaca-to-mt5.git copytrader-b
 Do not share state or logs between instances. API key pairs for the same
 underlying Alpaca account are not independent account pairs.
 
+For a new isolated project, clone into a new folder, run `setup.ps1`, then
+configure its own credentials, MT5 terminal path, `magic`, catalog, state,
+logs, and scheduled-task name. Preview and review its catalog, run preflight,
+and start it only after every check is `ok: true`. The paper-to-demo smoke test
+is allowed only for a demo MT5 target.
+
 ## Portable MT5 recovery
+
+Creating a new project folder does not by itself require portable mode. Keep
+`portable = false` when using one existing terminal after the old copier and
+terminal are stopped. Use a separate MT5 installation for each concurrent
+copier; set `portable = true` only for a dedicated copied MT5 installation
+started with `/portable`, or when that installation needs portable IPC
+isolation.
 
 If an independently installed terminal is running but Python reports an IPC
 initialization error, create a non-destructive portable copy in a

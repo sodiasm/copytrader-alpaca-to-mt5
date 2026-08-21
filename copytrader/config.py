@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import tomllib
 from dataclasses import dataclass
+from math import isfinite
 from pathlib import Path
 
 from .catalog import load_snapshot
@@ -16,6 +17,7 @@ class Settings:
     alpaca_secret: str
     alpaca_paper: bool
     mt5_path: Path
+    mt5_portable: bool
     mt5_login: int | None
     mt5_password: str | None
     mt5_server: str | None
@@ -23,6 +25,7 @@ class Settings:
     magic: int
     long_only: bool
     max_price_deviation_pct: float
+    quote_acquisition_timeout_seconds: float
     poll_interval_seconds: int
     reconciliation_plan_ttl_seconds: int
     database_path: Path
@@ -107,6 +110,9 @@ def load_settings(
         raise ConfigurationError(f"mt5.terminal_path does not exist: {mt5_path}")
     if not mt5_path.is_file():
         raise ConfigurationError(f"mt5.terminal_path is not a file: {mt5_path}")
+    portable = mt5.get("portable", False)
+    if not isinstance(portable, bool):
+        raise ConfigurationError("mt5.portable must be true or false")
     login_text = os.getenv("MT5_LOGIN", "").strip()
     snapshot_value = universe.get("snapshot_path")
     if not isinstance(snapshot_value, str) or not snapshot_value.strip():
@@ -142,6 +148,16 @@ def load_settings(
     deviation = float(copy.get("max_price_deviation_pct", 0.5))
     if deviation <= 0 or deviation > 10:
         raise ConfigurationError("copy.max_price_deviation_pct must be in (0, 10]")
+    try:
+        quote_timeout = float(copy.get("quote_acquisition_timeout_seconds", 5))
+    except (TypeError, ValueError) as exc:
+        raise ConfigurationError(
+            "copy.quote_acquisition_timeout_seconds must be a number"
+        ) from exc
+    if not isfinite(quote_timeout) or not 0 <= quote_timeout <= 10:
+        raise ConfigurationError(
+            "copy.quote_acquisition_timeout_seconds must be in [0, 10]"
+        )
     magic = int(mt5.get("magic", 926701))
     if magic <= 0:
         raise ConfigurationError("mt5.magic must be positive")
@@ -152,6 +168,7 @@ def load_settings(
         alpaca_secret=secret,
         alpaca_paper=bool(alpaca.get("paper", True)),
         mt5_path=mt5_path,
+        mt5_portable=portable,
         mt5_login=int(login_text) if login_text else None,
         mt5_password=os.getenv("MT5_PASSWORD") or None,
         mt5_server=os.getenv("MT5_SERVER") or None,
@@ -159,6 +176,7 @@ def load_settings(
         magic=magic,
         long_only=bool(copy.get("long_only", True)),
         max_price_deviation_pct=deviation,
+        quote_acquisition_timeout_seconds=quote_timeout,
         poll_interval_seconds=max(5, int(copy.get("poll_interval_seconds", 15))),
         reconciliation_plan_ttl_seconds=max(
             60, int(copy.get("reconciliation_plan_ttl_seconds", 300))

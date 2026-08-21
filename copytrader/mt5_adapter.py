@@ -36,7 +36,7 @@ class Mt5Gateway:
 
     def connect(self) -> None:
         with self._lock:
-            kwargs: dict[str, Any] = {}
+            kwargs: dict[str, Any] = {"portable": self.settings.mt5_portable}
             if self.settings.mt5_login is not None:
                 kwargs["login"] = self.settings.mt5_login
             if self.settings.mt5_password:
@@ -160,14 +160,46 @@ class Mt5Gateway:
 
     def current_price(self, symbol: str, side: str) -> Decimal:
         with self._lock:
-            tick = self.mt5.symbol_info_tick(symbol)
-            if tick is None:
-                raise SafetyError(f"no MT5 tick for {symbol}: {self.mt5.last_error()}")
-            price = tick.ask if side == "buy" else tick.bid
-            result = Decimal(str(price))
-            if result <= 0:
-                raise SafetyError(f"invalid MT5 {side} price for {symbol}")
-            return result
+            timeout = self.settings.quote_acquisition_timeout_seconds
+            deadline = time.monotonic() + timeout
+            attempts = 0
+            detail = "no quote received"
+            while True:
+                attempts += 1
+                tick = self.mt5.symbol_info_tick(symbol)
+                if tick is None:
+                    detail = f"no tick: {self.mt5.last_error()}"
+                else:
+                    price = tick.ask if side == "buy" else tick.bid
+                    result = Decimal(str(price))
+                    tick_time_msc = int(getattr(tick, "time_msc", 0) or 0)
+                    age_seconds = (
+                        datetime.now(timezone.utc).timestamp() * 1000 - tick_time_msc
+                    ) / 1000
+                    if result <= 0:
+                        detail = f"non-positive {side}={result}"
+                    elif tick_time_msc <= 0:
+                        detail = "tick timestamp is unavailable"
+                    elif age_seconds > 2:
+                        detail = f"stale tick age={age_seconds:.3f}s"
+                    else:
+                        LOGGER.info(
+                            "MT5 quote acquired for %s %s after %d attempt(s): "
+                            "price=%s age=%.3fs",
+                            symbol,
+                            side,
+                            attempts,
+                            result,
+                            max(age_seconds, 0),
+                        )
+                        return result
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise SafetyError(
+                        f"quote_unavailable for {symbol} {side} after {attempts} "
+                        f"attempt(s) in {timeout:g}s: {detail}"
+                    )
+                time.sleep(min(0.25, remaining))
 
     def positions(self, symbol: str | None = None) -> list[dict[str, Any]]:
         with self._lock:
@@ -212,10 +244,10 @@ class Mt5Gateway:
         side: str,
         volume: Decimal,
         correlation: str,
+        price: Decimal,
         position_ticket: int | None = None,
     ) -> dict[str, Any]:
         spec = self.symbol_spec(symbol)
-        price = self.current_price(symbol, side)
         deviation_points = max(
             1,
             int(
@@ -246,6 +278,7 @@ class Mt5Gateway:
         side: str,
         volume: Decimal,
         correlation: str,
+        price: Decimal,
         position_ticket: int | None = None,
     ) -> ExecutionResult:
         before = self.long_volume(symbol)
@@ -254,6 +287,7 @@ class Mt5Gateway:
             side=side,
             volume=volume,
             correlation=correlation,
+            price=price,
             position_ticket=position_ticket,
         )
         check = self.mt5.order_check(request)
@@ -300,9 +334,17 @@ class Mt5Gateway:
             comment=str(result.comment),
         )
 
-    def open_long(self, symbol: str, volume: Decimal, correlation: str) -> ExecutionResult:
+    def open_long(
+        self,
+        symbol: str,
+        volume: Decimal,
+        correlation: str,
+        *,
+        price: Decimal | None = None,
+    ) -> ExecutionResult:
         with self._lock:
             spec = self.symbol_spec(symbol)
+            order_price = price if price is not None else self.current_price(symbol, "buy")
             remaining = volume
             aggregate = Decimal("0")
             last: ExecutionResult | None = None
@@ -313,6 +355,7 @@ class Mt5Gateway:
                     side="buy",
                     volume=piece,
                     correlation=correlation,
+                    price=order_price,
                 )
                 aggregate += last.volume
                 remaining -= last.volume
@@ -328,8 +371,16 @@ class Mt5Gateway:
                 comment=last.comment,
             )
 
-    def close_long(self, symbol: str, volume: Decimal, correlation: str) -> ExecutionResult:
+    def close_long(
+        self,
+        symbol: str,
+        volume: Decimal,
+        correlation: str,
+        *,
+        price: Decimal | None = None,
+    ) -> ExecutionResult:
         with self._lock:
+            order_price = price if price is not None else self.current_price(symbol, "sell")
             remaining = volume
             aggregate = Decimal("0")
             last: ExecutionResult | None = None
@@ -347,6 +398,7 @@ class Mt5Gateway:
                     side="sell",
                     volume=piece,
                     correlation=correlation,
+                    price=order_price,
                     position_ticket=position["ticket"],
                 )
                 aggregate += last.volume

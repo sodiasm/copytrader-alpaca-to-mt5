@@ -81,12 +81,12 @@ class FakeMt5:
             }
         ]
 
-    def open_long(self, symbol, volume, correlation):
+    def open_long(self, symbol, volume, correlation, *, price=None):
         self.volume += volume
-        self.opens.append((symbol, volume, correlation))
+        self.opens.append((symbol, volume, correlation, price))
         return ExecutionResult(True, volume, Decimal("100"), "10", "20", 10009, "done")
 
-    def close_long(self, symbol, volume, correlation):
+    def close_long(self, symbol, volume, correlation, *, price=None):
         actual = min(volume, self.volume)
         self.volume -= actual
         self.closes.append((symbol, actual, correlation))
@@ -103,6 +103,7 @@ def settings(root: Path) -> Settings:
         alpaca_secret="secret",
         alpaca_paper=True,
         mt5_path=Path("terminal64.exe"),
+        mt5_portable=False,
         mt5_login=None,
         mt5_password=None,
         mt5_server=None,
@@ -110,6 +111,7 @@ def settings(root: Path) -> Settings:
         magic=926701,
         long_only=True,
         max_price_deviation_pct=0.5,
+        quote_acquisition_timeout_seconds=5,
         poll_interval_seconds=15,
         reconciliation_plan_ttl_seconds=300,
         database_path=root / "state.db",
@@ -166,6 +168,18 @@ class EngineTests(unittest.TestCase):
             engine.process(update("sell-short", "sell", qty="1", position="0"))
             self.assertEqual(mt5.closes, [])
             self.assertEqual(store.event_status("sell-short"), "long_only_skip")
+
+    def test_engine_passes_single_validated_quote_to_mt5_order(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            config = settings(root)
+            store = StateStore(config.database_path)
+            mt5 = FakeMt5()
+            engine = CopyEngine(config, store, FakeAlpaca(), mt5)
+
+            engine.process(update("buy-price", "buy"))
+
+            self.assertEqual(mt5.opens[0][3], Decimal("100"))
 
     def test_preflight_requires_flat_initial_state(self):
         with tempfile.TemporaryDirectory() as directory:

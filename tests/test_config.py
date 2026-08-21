@@ -10,11 +10,22 @@ def toml_string(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def write_config(root: Path, terminal_path: str | None) -> Path:
+def write_config(
+    root: Path,
+    terminal_path: str | None,
+    *,
+    portable: object | None = None,
+    quote_timeout: object | None = None,
+) -> Path:
     config_path = root / "config.toml"
     lines = ["[mt5]"]
     if terminal_path is not None:
         lines.append(f"terminal_path = {toml_string(terminal_path)}")
+    if portable is not None:
+        value = str(portable).lower() if isinstance(portable, bool) else str(portable)
+        lines.append(f"portable = {value}")
+    if quote_timeout is not None:
+        lines.extend(["[copy]", f"quote_acquisition_timeout_seconds = {quote_timeout}"])
     lines.extend(
         [
             "[symbol_universe]",
@@ -42,6 +53,64 @@ class ConfigTests(unittest.TestCase):
             )
 
             self.assertEqual(settings.mt5_path, terminal)
+            self.assertFalse(settings.mt5_portable)
+
+    def test_accepts_portable_mt5_terminal(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            terminal = root / "mt5" / "terminal64.exe"
+            terminal.parent.mkdir()
+            terminal.touch()
+
+            settings = load_settings(
+                write_config(root, str(terminal), portable=True),
+                require_credentials=False,
+                require_snapshot=False,
+            )
+
+            self.assertTrue(settings.mt5_portable)
+
+    def test_rejects_non_boolean_portable_setting(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            terminal = root / "terminal64.exe"
+            terminal.touch()
+
+            with self.assertRaisesRegex(
+                ConfigurationError, "mt5\\.portable must be true or false"
+            ):
+                load_settings(
+                    write_config(root, str(terminal), portable='"yes"'),
+                    require_credentials=False,
+                    require_snapshot=False,
+                )
+
+    def test_accepts_bounded_quote_acquisition_timeout(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            terminal = root / "terminal64.exe"
+            terminal.touch()
+            settings = load_settings(
+                write_config(root, str(terminal), quote_timeout="5"),
+                require_credentials=False,
+                require_snapshot=False,
+            )
+            self.assertEqual(settings.quote_acquisition_timeout_seconds, 5)
+
+    def test_rejects_out_of_range_quote_acquisition_timeout(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            terminal = root / "terminal64.exe"
+            terminal.touch()
+            with self.assertRaisesRegex(
+                ConfigurationError,
+                "copy\\.quote_acquisition_timeout_seconds must be in \\[0, 10\\]",
+            ):
+                load_settings(
+                    write_config(root, str(terminal), quote_timeout="10.1"),
+                    require_credentials=False,
+                    require_snapshot=False,
+                )
 
     def test_resolves_relative_terminal_path_from_config_directory(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -232,7 +232,9 @@ class CopyEngine:
                 status="sending",
                 executed_volume=Decimal("0"),
             )
-            result = self.mt5.open_long(target_symbol, volume, correlation)
+            result = self.mt5.open_long(
+                target_symbol, volume, correlation, price=target_price
+            )
             final_source = new_source_qty
             final_target = target_volume + result.volume
             final_residual = new_residual
@@ -258,7 +260,7 @@ class CopyEngine:
                     executed_volume=Decimal("0"),
                 )
                 return
-            self._validate_price(event, target_symbol, "sell")
+            target_price = self._validate_price(event, target_symbol, "sell")
             correlation = self.store.create_action(
                 event.execution_id, target_symbol, close_volume
             )
@@ -267,7 +269,9 @@ class CopyEngine:
                 status="sending",
                 executed_volume=Decimal("0"),
             )
-            result = self.mt5.close_long(target_symbol, close_volume, correlation)
+            result = self.mt5.close_long(
+                target_symbol, close_volume, correlation, price=target_price
+            )
             final_source = remaining_source
             final_target = max(Decimal("0"), target_volume - result.volume)
             final_residual = remaining_residual
